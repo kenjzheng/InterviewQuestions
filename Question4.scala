@@ -17,10 +17,10 @@ object Question4 extends App{
     var x = 1
     for(i <- 0 to array.length-1){
       if(array(i)>0){
-        if(array(i)<=x)
+        if(array(i)==x)
             x = x+1
-        else
-          map += (array(i)->0)
+        else if(array(i)>x)
+          map += (array(i) -> 0)
       }
     }
 
