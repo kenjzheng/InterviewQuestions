@@ -1,14 +1,15 @@
 package InterviewQuestions
 import scala.collection.mutable.Map
+import scala.util.control.Breaks._
 /**
   * Created by Ken.J.Zheng on 7/16/2018.
   * Given an array of integers, find the first missing positive integer in linear time and constant space.
   * In other words, find the lowest positive integer that does not exist in the array. The array can contain
   * duplicates and negative numbers as well.
-
-  For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
-
-  You can modify the input array in-place.
+  **
+  *For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should give 3.
+  **
+  *You can modify the input array in-place.
   */
 object Question4 extends App{
   //O(2n-1)
@@ -24,8 +25,11 @@ object Question4 extends App{
       }
     }
 
-    for(i<- 0 to map.size-1){
-      if(map.contains(x)) x=x+1
+    breakable {
+      for (i <- 0 to map.size - 1) {
+        if (map.contains(x)) x = x + 1
+        else break()
+      }
     }
 
     x
@@ -42,4 +46,7 @@ object Question4 extends App{
 
   val test4=Array(5,4,5,1,3,0,-2,5,10)
   println(getInteger(test4)==2)
+
+  val test5=Array(1,2,5,6,4,3)
+  println(getInteger(test5))
 }
