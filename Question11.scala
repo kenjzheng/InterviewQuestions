@@ -1,7 +1,7 @@
 package InterviewQuestions
 
 /**
-  * Created by U0068746 on 8/8/2018.
+  * Created by Ken.J.Zheng on 8/8/2018.
   */
 /*
 Given an array of integers and a number k, where 1 <= k <= length of the array, compute the maximum values of each subarray of length k.
